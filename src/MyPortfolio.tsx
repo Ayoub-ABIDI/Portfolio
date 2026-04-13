@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Linkedin, Github, ExternalLink, Menu, X, Sun, Moon, MapPin, Phone, Award, Briefcase, GraduationCap, ChevronRight, Download, Calendar, Building2, Code2, Users, Trophy, Calendar as CalendarIcon } from 'lucide-react';
+import { Mail, Linkedin, Github, ExternalLink, Menu, X, Sun, Moon, MapPin, Phone, Award, Briefcase, GraduationCap, ChevronRight, Download, Calendar, Building2, Code2, Users, Trophy, Calendar as CalendarIcon, Brain, Cpu, Database, Cloud, Sparkles, Eye, BookOpen, Dna, Video } from 'lucide-react';
 
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,41 +34,69 @@ const Portfolio = () => {
   };
 
   const projects = [
+    // New Gen-AI/RAG Projects
+    {
+      title: "Tunisian Sign Language Translator",
+      description: "Multimodal RAG system translating Tunisian sign language to text/speech using VLM (CLIP) for sign detection, LLaMA for phrase construction, and TTS integration. Works as browser extension for Google Meet, Teams, Zoom.",
+      tech: ["CLIP", "LLaMA", "RAG", "Python", "JavaScript", "Chrome Extension"],
+      github: "https://github.com/Ayoub-ABIDI/E-learNIT",
+      icon: <Video className="text-blue-500" size={24} />
+    },
+    {
+      title: "RAG Story Assistant",
+      description: "Intelligent chatbot using RAG to provide deep contextual understanding of novels/stories. Tested on 'Violet Evergarden' with semantic search, character analysis, and plot exploration capabilities.",
+      tech: ["RAG", "LangChain", "FAISS", "HuggingFace", "Streamlit"],
+      github: "https://github.com/Ayoub-ABIDI/violet-evergarden-rag-chatbot",
+      icon: <BookOpen className="text-purple-500" size={24} />
+    },
+    {
+      title: "DNA Age Prediction",
+      description: "Advanced workflow for age prediction from DNA using multiple data reduction techniques. Comparative analysis of PCA, Variance Threshold, Correlation Filter, ElasticNet, and RandomForest feature selection methods.",
+      tech: ["Bioinformatics", "Python", "Scikit-learn", "PCA", "RandomForest"],
+      github: "https://github.com/Ayoub-ABIDI/DNA-Age-Prediction",
+      icon: <Dna className="text-green-500" size={24} />
+    },
     {
       title: "Intelligent Log Analysis Platform",
       description: "Full-stack enterprise solution with automated log parsing, real-time anomaly detection, and AI-powered correction recommendations using RAG techniques.",
       tech: ["Spring Boot", "Next.js", "AI", "RAG", "PostgreSQL", "Docker"],
       github: "https://github.com/Ayoub-ABIDI/LogMiner",
+      icon: <Brain className="text-blue-500" size={24} />
     },
     {
       title: "Deep Learning for EEG Classification",
       description: "Comparative study of ANN, CNN, and CNN-LSTM architectures for classifying epileptic patients based on EEG data with real-time Streamlit interface.",
       tech: ["PyTorch", "TensorFlow", "Signal Processing", "Streamlit", "CNN"],
       github: "https://github.com/Ayoub-ABIDI/-Study-of-Deep-Learning-Models-for-the-Classification-of-Epileptic-Patients",
+      icon: <Cpu className="text-purple-500" size={24} />
     },
     {
       title: "AI for Mental Health Detection",
-      description: "Dual-model system combining speech analysis and NLP for adolescent depression detection .",
+      description: "Dual-model system combining speech analysis and NLP for adolescent depression detection.",
       tech: ["PyTorch", "NLP", "CNN", "BERT", "Speech Processing"],
       github: "https://github.com/Ayoub-ABIDI",
+      icon: <Brain className="text-pink-500" size={24} />
     },
     {
       title: "ZEN Virtual Dressing",
       description: "3D avatar generation from body measurements using Conditional GANs and Poisson surface reconstruction.",
       tech: ["GANs", "PyTorch", "3D Reconstruction", "OpenCV"],
       github: "https://github.com/Ayoub-ABIDI",
+      icon: <Sparkles className="text-yellow-500" size={24} />
     },
     {
       title: "Epileptic Seizure Prediction",
-      description: "Seizure prediction aims to estimate how long until the next epileptic seizure from continuous EEG. Instead of classifying “preictal vs interictal”, we treat the problem as regression: the model predicts a continuous time-to-seizure (seconds or minutes).",
+      description: "Seizure prediction as regression problem predicting continuous time-to-seizure from EEG using deep learning models.",
       tech: ["Python", "CNN", "Signal Processing", "TensorFlow"],
       github: "https://github.com/Ayoub-ABIDI/Seizure-Prediction-",
+      icon: <Brain className="text-red-500" size={24} />
     },
     {
       title: "Credit Line Adjuster with RL",
       description: "Q-Learning agent for dynamic credit line adjustment reducing default rates by 23%.",
       tech: ["Python", "Reinforcement Learning", "Q-Learning", "Streamlit"],
       github: "https://github.com/Ayoub-ABIDI/Credit-Line-Adjuster",
+      icon: <Database className="text-green-500" size={24} />
     }
   ];
 
@@ -135,11 +163,24 @@ const Portfolio = () => {
   ];
 
   const skillsByCategory = {
+    "Gen-AI / LLM Technologies": [
+      { name: "LangChain", logo: "https://blog.langchain.dev/content/images/2024/03/LangChain-logo.png" },
+      { name: "HuggingFace", logo: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg" },
+      { name: "Groq", logo: "https://www.ciscoinvestments.com/assets/logos/groq-logo.png" },
+      { name: "Ollama", logo: "https://ollama.com/public/ollama.png" },
+      { name: "LLaMA", logo: "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/meta-color.png" },
+      { name: "Gemma", logo: "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/gemma-color.png" },
+      { name: "DeepSeek", logo: "https://freepnglogo.com/images/all_img/deepseek-logo-png-text-only-200a.png" },
+      { name: "Mistral", logo: "https://datascientest.com/wp-content/uploads/2025/03/Mistral_AI_logo_2025.svg_.png" },
+      { name: "CLIP", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Logo_de_Clip.svg/1024px-Logo_de_Clip.svg.png" },
+      { name: "FAISS", logo: "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/meta-color.png" },
+      { name: "ChromaDB", logo: "https://www.trychroma.com/favicon.ico" },
+      { name: "Chainlit", logo: "https://docs.chainlit.io/favicon.svg" }
+    ],
     "ML/DL Libraries & Frameworks": [
       { name: "TensorFlow", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
       { name: "PyTorch", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
       { name: "Scikit-learn", logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" },
-      { name: "Hugging Face", logo: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg" },
       { name: "Keras", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" }
     ],
     "Data Analysis & ML": [
@@ -245,9 +286,14 @@ const Portfolio = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium ${isDark ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'bg-blue-100 text-blue-600 border border-blue-200'}`}>
-                  Available for Internships
-                </span>
+                <div className="flex flex-wrap gap-2">
+                  <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium ${isDark ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'bg-blue-100 text-blue-600 border border-blue-200'}`}>
+                    Available for Internships
+                  </span>
+                  <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium ${isDark ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20' : 'bg-purple-100 text-purple-600 border border-purple-200'}`}>
+                    Data Scientist
+                  </span>
+                </div>
                 
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                   Hi, I'm <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Ayoub Abidi</span>
@@ -256,7 +302,7 @@ const Portfolio = () => {
                 <p className="text-2xl md:text-3xl font-semibold text-gray-400">Data Science & AI Enthusiast</p>
                 
                 <p className={`text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                  Final-year ICT Engineering student at ENIT, passionate about transforming data into meaningful insights through Machine Learning and AI.
+                  As a passionate data scientist and AI enthusiast, I transform complex data into meaningful insights. With expertise in machine learning, deep learning, and Gen-AI technologies, I build intelligent systems that solve real-world problems.
                 </p>
               </div>
 
@@ -265,11 +311,11 @@ const Portfolio = () => {
                   Get In Touch
                   <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
                 </button>
-                <a href="/CV.pdf" download>
-                <button className={`px-8 py-4 rounded-xl font-semibold border-2 transition-all hover:scale-105 flex items-center ${isDark ? 'border-gray-700 hover:bg-gray-800' : 'border-gray-300 hover:bg-gray-100'}`}>
-                  <Download size={20} className="mr-2" />
-                  Download CV
-                </button>
+                <a href={`${process.env.PUBLIC_URL}/CV.pdf`} download>
+                  <button className={`px-8 py-4 rounded-xl font-semibold border-2 transition-all hover:scale-105 flex items-center ${isDark ? 'border-gray-700 hover:bg-gray-800' : 'border-gray-300 hover:bg-gray-100'}`}>
+                    <Download size={20} className="mr-2" />
+                    Download CV
+                  </button>
                 </a>
               </div>
 
@@ -292,7 +338,7 @@ const Portfolio = () => {
                 <div className={`relative w-full h-full rounded-3xl overflow-hidden border-4 ${isDark ? 'border-gray-800' : 'border-gray-200'} shadow-2xl`}>
                   <div className={`w-full h-full flex items-center justify-center ${isDark ? 'bg-gray-800' : 'bg-gray-200'}`}>
                     <div className="text-center p-8">
-                      <img src='/myphoto.png' alt="Ayoub Abidi" className="w-full h-full object-cover rounded-3xl" />
+                      <img src={`${process.env.PUBLIC_URL}/myphoto.png`} alt="Ayoub Abidi" className="w-full h-full object-cover rounded-3xl" />
                     </div>
                   </div>
                 </div>
@@ -315,19 +361,19 @@ const Portfolio = () => {
             <div className="lg:col-span-2 space-y-6">
               <div className={`text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p className="mb-6">
-                  I'm an <span className="font-semibold text-blue-500">energetic, creative, and open-minded ICT engineering student</span> at the National Engineering School of Tunis (ENIT), pursuing both my Engineering degree in Telecommunications with a Data Science specialization and a Master's in Information Processing Technology focused on health and bio-data applications.
+                  I'm a <span className="font-semibold text-blue-500">passionate data scientist and AI enthusiast</span> with a strong foundation in telecommunications engineering and data science. My journey at ENIT has equipped me with both theoretical knowledge and practical skills in cutting-edge technologies.
                 </p>
                 
                 <p className="mb-6">
-                  My journey is driven by an insatiable <span className="font-semibold text-purple-500">curiosity and passion for problem-solving</span>. I believe data holds the key to understanding complex phenomena and creating innovative solutions. Whether predicting epileptic seizures or building intelligent learning systems, I'm motivated by turning raw data into actionable insights.
+                  What drives me is the <span className="font-semibold text-purple-500">endless curiosity about how data can reveal hidden patterns</span> and create meaningful solutions. Whether it's predicting medical conditions from EEG signals or building intelligent language translation systems, I thrive on turning complex challenges into elegant AI solutions.
                 </p>
                 
                 <p className="mb-6">
-                  I've developed expertise in <span className="font-semibold text-blue-500">Machine Learning, Deep Learning, and Signal Processing</span>. From research at RISC Laboratory on EEG classification to my internship at Talan Consulting developing AI-powered systems, I consistently seek opportunities to apply cutting-edge techniques to real-world problems.
+                  My expertise spans across <span className="font-semibold text-blue-500">Machine Learning, Deep Learning, and Generative AI</span>. From research at RISC Laboratory to professional experience at Talan Consulting, I've worked on diverse projects that combine technical rigor with practical impact.
                 </p>
                 
                 <p>
-                  As <span className="font-semibold text-purple-500">Vice President of IEEE ENIT Student Branch</span>, I've learned the value of leadership and teamwork. I believe the best innovations come from diverse perspectives and collaborative efforts.
+                  As <span className="font-semibold text-purple-500">Vice President of IEEE ENIT Student Branch</span>, I've learned the importance of leadership and collaboration in driving technological innovation. I believe that the best solutions emerge when diverse minds come together to tackle complex problems.
                 </p>
               </div>
 
@@ -347,11 +393,11 @@ const Portfolio = () => {
                 <div className={`p-6 rounded-2xl ${isDark ? 'bg-gray-800 border border-gray-700' : 'bg-gray-100 border border-gray-200'} hover:scale-105 transition-transform`}>
                   <Award className="text-green-500 mb-3" size={28} />
                   <div className="font-semibold text-lg mb-1">IEEE Leader</div>
-                  <div className={isDark ? 'text-gray-400' : 'text-gray-600'}>Vice President IEEE ENIT Student Branch</div>
+                  <div className={isDark ? 'text-gray-400' : 'text-gray-600'}>Vice President IEEE ENIT</div>
                 </div>
                 
                 <div className={`p-6 rounded-2xl ${isDark ? 'bg-gray-800 border border-gray-700' : 'bg-gray-100 border border-gray-200'} hover:scale-105 transition-transform`}>
-                  <Briefcase className="text-pink-500 mb-3" size={28} />
+                  <Brain className="text-pink-500 mb-3" size={28} />
                   <div className="font-semibold text-lg mb-1">Focus</div>
                   <div className={isDark ? 'text-gray-400' : 'text-gray-600'}>AI & Data Science</div>
                 </div>
@@ -398,12 +444,13 @@ const Portfolio = () => {
               </div>
 
               <div className={`p-6 rounded-2xl ${isDark ? 'bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-blue-500/30' : 'bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-200'}`}>
-                <Award className="text-yellow-500 mb-4" size={32} />
-                <h3 className="font-semibold text-xl mb-3">IEEE Volunteer</h3>
+                <Brain className="text-yellow-500 mb-4" size={32} />
+                <h3 className="font-semibold text-xl mb-3">AI Specialization</h3>
                 <div className="space-y-2 text-sm">
-                  <div>Vice President, IEEE ENIT (2025)</div>
-                  <div>Treasurer, IEEE ENIT (2024)</div>
-                  <div>Project Manager, TUNED 7.0</div>
+                  <div>Machine & Deep Learning</div>
+                  <div>Generative AI & LLMs</div>
+                  <div>Computer Vision</div>
+                  <div>Signal Processing</div>
                 </div>
               </div>
             </div>
@@ -506,19 +553,19 @@ const Portfolio = () => {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <ChevronRight size={20} className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
-                  <span>Developed a full-stack intelligent log analysis platform for automated log parsing, anomaly detection, and error/warning prediction.</span>
+                  <span>Developed a full-stack intelligent log analysis platform with automated log parsing, anomaly detection, and AI-powered correction using RAG techniques.</span>
                 </li>
                 <li className="flex items-start">
                   <ChevronRight size={20} className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
-                  <span>Integrated generative AI and RAG techniques for analyzing unstructured logs and building AI assistants/chatbots using Chainlit.</span>
+                  <span>Integrated generative AI and RAG for analyzing unstructured logs and building AI assistants/chatbots using Chainlit.</span>
                 </li>
                 <li className="flex items-start">
                   <ChevronRight size={20} className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
-                  <span>Built a robust backend with Spring Boot, a responsive frontend with Next.js, and managed data storage using PostgreSQL.</span>
+                  <span>Built backend with Spring Boot, frontend with Next.js, and managed data with PostgreSQL.</span>
                 </li>
               </ul>
               <div className="flex flex-wrap gap-2 mt-4">
-                {['Spring Boot', 'Next.js', 'TypeScript', 'PostgreSQL', 'Docker', 'AI'].map(tech => (
+                {['Spring Boot', 'Next.js', 'TypeScript', 'PostgreSQL', 'Docker', 'AI', 'RAG'].map(tech => (
                   <span key={tech} className={`px-3 py-1 text-xs rounded-full ${isDark ? 'bg-gray-900 text-blue-400' : 'bg-blue-50 text-blue-600'}`}>
                     {tech}
                   </span>
@@ -540,15 +587,15 @@ const Portfolio = () => {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <ChevronRight size={20} className="text-purple-500 mr-2 mt-1 flex-shrink-0" />
-                  <span>Conducted a comparative study of deep learning models (ANN, CNN, CNN-LSTM) for EEG-based epileptic patient classification.</span>
+                  <span>Conducted comparative study of deep learning models (ANN, CNN, CNN-LSTM) for EEG-based epileptic patient classification.</span>
                 </li>
                 <li className="flex items-start">
                   <ChevronRight size={20} className="text-purple-500 mr-2 mt-1 flex-shrink-0" />
-                  <span>Implemented preprocessing and feature extraction pipelines to improve model accuracy and reliability.</span>
+                  <span>Implemented preprocessing and feature extraction pipelines to improve model accuracy.</span>
                 </li>
                 <li className="flex items-start">
                   <ChevronRight size={20} className="text-purple-500 mr-2 mt-1 flex-shrink-0" />
-                  <span>Developed a Streamlit interface for real-time EEG analysis to support clinical decision-making.</span>
+                  <span>Developed Streamlit interface for real-time EEG analysis.</span>
                 </li>
               </ul>
               <div className="flex flex-wrap gap-2 mt-4">
@@ -558,29 +605,6 @@ const Portfolio = () => {
                   </span>
                 ))}
               </div>
-            </div>
-
-            <div className={`p-8 rounded-2xl ${isDark ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'} hover:shadow-xl transition-shadow`}>
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Telecommunications Network Intern</h3>
-                  <div className="text-green-500 font-semibold">Tunisia Telecom</div>
-                  <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Tunis, Tunisia</div>
-                </div>
-                <div className={`mt-2 md:mt-0 px-4 py-2 rounded-lg text-sm font-medium ${isDark ? 'bg-green-500/10 text-green-400' : 'bg-green-100 text-green-600'}`}>
-                  June 2024
-                </div>
-              </div>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <ChevronRight size={20} className="text-green-500 mr-2 mt-1 flex-shrink-0" />
-                  <span>Gained hands-on experience with GSM infrastructure serving 5M+ subscribers</span>
-                </li>
-                <li className="flex items-start">
-                  <ChevronRight size={20} className="text-green-500 mr-2 mt-1 flex-shrink-0" />
-                  <span>Participated in network maintenance and troubleshooting for 2G/3G/4G networks</span>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
@@ -600,7 +624,10 @@ const Portfolio = () => {
               <div key={index} className={`rounded-2xl overflow-hidden border transition-all hover:scale-105 hover:shadow-xl ${isDark ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-bold">{project.title}</h3>
+                    <div className="flex items-center gap-3">
+                      {project.icon}
+                      <h3 className="text-xl font-bold">{project.title}</h3>
+                    </div>
                     <a href={project.github} target="_blank" rel="noopener noreferrer" className={`p-2 rounded-lg ${isDark ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}>
                       <Github size={20} />
                     </a>
@@ -636,7 +663,7 @@ const Portfolio = () => {
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
                   {skills.map((skill, index) => (
                     <div key={index} className={`flex flex-col items-center p-4 rounded-xl transition-all hover:scale-110 ${isDark ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'}`}>
-                      <img src={skill.logo} alt={skill.name} className="w-10 h-10 mb-2" />
+                      <img src={skill.logo} alt={skill.name} className="w-10 h-10 mb-2 object-contain" />
                       <span className="font-medium text-center text-sm">{skill.name}</span>
                     </div>
                   ))}
